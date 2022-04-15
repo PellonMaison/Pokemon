@@ -1,5 +1,15 @@
 import axios from 'axios';
-import { GET_POKEMONS, GET_TYPES, FILTER_BY_TYPE, FILTER_IF_CREATED, ORDER_BY_NAME, GET_NAME_POKEMONS, ORDER_BY_ATTACK, FILTER_BY_NAME, CLEAN_TYPES, GET_ID, CLEAN_ID } from './constants';
+export const GET_POKEMONS = 'GET_POKEMONS';
+export const GET_TYPES = 'GET_TYPES';
+export const GET_ID = 'GET_ID'; 
+export const CLEAN_TYPES = 'CLEAN_TYPES';
+export const CLEAN_ID = 'CLEAN_ID';
+export const FILTER_BY_TYPE = 'FILTER_BY-TYPE';
+export const FILTER_IF_CREATED = 'FILTER_IF_CREATED';
+export const GET_NAME_POKEMONS = 'GET_NAME_POKEMONS';
+export const FILTER_BY_NAME = 'FILTER_BY_NAME';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const ORDER_BY_ATTACK = 'ORDER_BY_ATTACK';
 
 
 export function getPokemons() {
@@ -78,7 +88,7 @@ export function getPokemonsName(name){
 } 
 
 export function filterByType(payload) {
-    // console.log(payload)
+    
     return {
         type: FILTER_BY_TYPE,
         payload
@@ -86,7 +96,7 @@ export function filterByType(payload) {
 }
 
 export function filterIfCreated(payload){
-    // console.log(payload)
+    
     return{
         type: FILTER_IF_CREATED,
         payload

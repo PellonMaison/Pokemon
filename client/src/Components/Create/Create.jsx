@@ -1,16 +1,16 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { getTypes } from "../../Actions/actions";
 import Nav from "../Nav/Nav";
-import pika from '../../Imgs/pika.jpg'
+import pika from '../../Imgs/pika.png';
 import styles from '../Create/Create.module.css'
 
 export default function Create() {
     const validate = (input) => {
         let error
-        if (!input.name) {
+        if (!input.name){
+           
             error = 'Insert Name'
         }
         return error;
@@ -51,7 +51,7 @@ export default function Create() {
     }, [storeType]);
 
     useEffect(() => {
-        setPoke({ ...poke, types: valTypes });
+        setPoke({ ...poke, types: valTypes });// eslint-disable-next-line
     }, [valTypes]);
 
     const send = (el, event) => {
@@ -62,6 +62,8 @@ export default function Create() {
         } else {
             event.preventDefault();
             setErr('error');
+            
+           
         }
     }
 
@@ -81,6 +83,7 @@ export default function Create() {
     }
 
     const handleHp = (change) => {
+       
         setPoke({ ...poke, hp: change.target.value });
     }
 
@@ -130,7 +133,7 @@ export default function Create() {
                 <div className={styles.someC}>
                     <div className={styles.som}>
                         <div className={styles.bacData}>
-                            <h3 className={styles.type}> DESCRIBE YOUR POKEMON </h3>
+                            <h3 className={styles.type}> CREATE YOUR OWN POKEMON! </h3>
                             <div className={styles.name}>
                                 <label >Name: </label>
                                 <input type='text' onChange={handleName} placeholder='Name' value={poke.name} name='name' className={styles.inpN} />
@@ -140,7 +143,8 @@ export default function Create() {
                             <div className={styles.statContainer}>
                                 <div className={styles.stat}>
                                     <label className={styles.p}>Life Points:     </label>
-                                    <input className={styles.inputHp} type='number' onChange={handleHp} placeholder='LifePoints' value={poke.hp} name='lifepoints' min='0' />
+                                    <input className={styles.inputHp} type='number' onChange={handleHp} placeholder='ingrese valor' value={poke.hp} name='lifePoints' min='0' />
+                                    
                                 </div>
                                 <div className={styles.stat}>
                                     <label className={styles.p}>Attack Points:     </label>
@@ -164,9 +168,7 @@ export default function Create() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.imgDiv}>
-                            <img className={styles.img} src={pika} alt='Pokemon' />
-                        </div>
+                        
                     </div>
                     <div >
                         <h3 className={styles.type}> TYPES</h3>
@@ -181,10 +183,10 @@ export default function Create() {
                             }
                         </div>
                     </div>
-                    <div className={styles.succes}>{succes && <h2>CREATED SUCCESFULLY</h2>}</div>
-                    <div className={styles.errorC}>{err && <h2>OOPS... WE COULDN'T CREATE YOUR POKEMON. MAKE SURE YOU COMPLETE ALL THE FIELDS.</h2>}</div>
+                    <div className={styles.succes}>{succes && <h2>CREATED SUCCESFULLY!</h2>}</div>
+                    <div className={styles.errorC}>{err && <h2>All fields are required.</h2>}</div>
                     <div className={styles.bacData}><input type='submit' value='CREATE!' className={styles.btn} /></div>
-
+                    
                 </div>
             </form>
         </div>

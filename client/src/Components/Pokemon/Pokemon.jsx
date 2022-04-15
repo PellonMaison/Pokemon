@@ -12,7 +12,7 @@ export default function Card({ name, img, types, id }) {
                 <h3>{name.toUpperCase()}</h3>
                 <div className={styles.types}> <div className={styles.ty}>TYPES:</div> 
                     {
-                        types.map((el, i) => <div key={i}><div key={i}>{`- ${el.name}`}</div></div>)
+                        types.map((el, i) => <div key={i}><div key={i}>{` ${el.name}`}</div></div>)
                     }
                 </div>
             </div>

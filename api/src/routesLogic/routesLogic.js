@@ -34,15 +34,24 @@ const getPokeApi = async (req, res) => {
                 }
             }
         }
-        const urlApi = await axios.get('http://pokeapi.co/api/v2/pokemon?limit=40');
+        const urlApi = await axios.get('http://pokeapi.co/api/v2/pokemon');
+        console.log(urlApi)
+        const results1 = urlApi.data.results
+        console.log(results1)
+        const urlApi1 = await axios.get(urlApi.data.next);
+        console.log(urlApi1)
+        const results2 = urlApi1.data.results
+        let pokeApi = [...results1, ...results2]; 
+
+
         const db = await Pokemon.findAll({
             attributes: ['name', 'img', 'attack', 'defense', 'id'],
             include: {
                 model: Type,
                 attributes: ['name']
             }
-        });                //Array🔽
-        let details = await Promise.all(urlApi.data.results.map(async el => await axios(el.url)));
+        });                
+        let details = await Promise.all(pokeApi.map(async el => await axios(el.url)));
         details = details.map(el => {
             let newPokemon = {
                 id: el.data.id,
@@ -58,7 +67,7 @@ const getPokeApi = async (req, res) => {
         details = details.concat(db);
         return res.json(
             {
-                ManyPokes: details.length, //details sigue siendo un array je
+                ManyPokes: details.length, 
                 pokemones: details
 
             })
@@ -69,7 +78,7 @@ const getPokeApi = async (req, res) => {
 
 const getIds = async (req, res) => {
     const id = req.params.id;
-    if (!id || parseInt(id) <0) res.status(404).json('Invalid Id');
+    if (!id || parseInt(id) < 0) res.status(404).json('Invalid Id');
     try {
         if (!id.includes('-')) {
             const urlId = await axios.get('https://pokeapi.co/api/v2/pokemon/' + id);
@@ -95,7 +104,6 @@ const getIds = async (req, res) => {
             return res.json(pokemon);
 
         } else {
-            // console.log(await 'im in')
             const pokemon = await Pokemon.findByPk(String(id), {
                 include: {
                     model: Type,
@@ -128,7 +136,7 @@ const getTypes = async (req,res) => {
 }
 
 const postPokemons = async (req,res) => {
-    let {name,img,hp,attack,defense,speed,height,weight,types} = req.body;
+    let {name, img, hp, attack, defense, speed, height, weight, types} = req.body;
     if(!name) return res.status(404).json('Invalid Name');
 
     name = name.toLowerCase();
@@ -142,7 +150,7 @@ const postPokemons = async (req,res) => {
         height,
         weight
     });
-    newPokemon.addType(types)//scope
+    newPokemon.addType(types)
     res.json(newPokemon)
 }
 

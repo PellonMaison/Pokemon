@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, getTypes, filterByType, filterIfCreated, filterByName, orderByName, orderByAttack } from "../../Actions/actions";
+import { getPokemons, getIds, filterByType, filterIfCreated, filterByName, orderByName, orderByAttack } from "../../Actions/actions";
 import { Link } from 'react-router-dom'
 import styles from './Home.module.css'
 import Pokemons from "../Pokemons/Pokemons";
@@ -14,8 +14,9 @@ import Nav from "../Nav/Nav";
 export default function Home() {
     const dispatch = useDispatch();
     var allPokes = useSelector(store => store.pokemons);
+    
     const [currentPage, setCurrentPage] = useState(1);
-    const [PokesPerPage, setPokesPerPage] = useState(9);
+    const [PokesPerPage, setPokesPerPage] = useState(6);
     const [stateName, setStateName] = useState('');
     const indexOfLastPoke = currentPage * PokesPerPage;
     const indefOfFirstPoke = indexOfLastPoke - PokesPerPage;
@@ -28,6 +29,7 @@ export default function Home() {
 
     useEffect(() => {
         dispatch(getPokemons());
+       
     }, [dispatch]) //component didMount
 
     function handleFilterType(click) { 
@@ -75,8 +77,8 @@ export default function Home() {
                 <div className={styles.container}>
                     <select onChange={click => handleOrder(click)} className={styles.select}>
                         <option value='alpha'>A - Z</option>
-                        <option value='asc'>Ascendant</option>
-                        <option value='desc'>Descendant</option>
+                        <option value='asc'>Descendant</option>
+                        <option value='desc'>Ascendant</option>
                     </select>
                     <select onChange={click => handleAttack(click)}className={styles.select}>
                         <option value='oa'>Attack Order</option>
@@ -88,7 +90,10 @@ export default function Home() {
                         <option value='created'>Created</option>
                     </select>
                     <select onChange={click => handleFilterType(click)}className={styles.select}>
-                        <option value='all'>All</option>
+                      
+                        <option value='all'>Filter Type</option>
+                       
+                        
                         <option value='grass'>Grass</option>
                         <option value='poison'>Poison</option>
                         <option value='fire'>Fire</option>
@@ -108,15 +113,15 @@ export default function Home() {
                         <option value='dragon'>Dragon</option>
                         <option value='stedarkel'>Stedarkel</option>
                         <option value='shadow'>Shadow</option>
-                        <option value='unknown'>Unknown</option>
+                        <option value='unknown'>Unknown</option> 
                     </select>
                 </div>
-                <div>
+                <div> 
                     <Paged PokesPerPage={PokesPerPage} allPokemons={allPokes.length} paged={paged} />
                 </div>
                     <Pokemons list={currentPokes} className={styles.group}/>
                 <div className={styles.o}>
-                    <Paged PokesPerPage={PokesPerPage} allPokemons={allPokes.length} paged={paged} />
+                  
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ export default function Details() {
 
     const dispatch = useDispatch();
     const [stats, setStats] = useState({});
+    
     const details = useSelector(store => store.details);
     const { id } = useParams();
 
@@ -28,6 +29,7 @@ export default function Details() {
 
     useEffect(() => {
         setStats(details);
+        
     }, [details])
 
 
@@ -37,7 +39,7 @@ export default function Details() {
         <div>
             <Nav />
             <div>
-                {Object.keys(stats).length === 0 ? <span>Wait a second please...</span> :
+                {Object.keys(stats).length === 0 ? <span>Hold on a moment please...</span> :
                     <div className={styles.details}>
                         <div className={styles.nam}>
                             <div className={styles.name}>
@@ -72,9 +74,9 @@ export default function Details() {
                                 <label>Speed: </label>
                                 {stats.speed}
                             </div>
-                            <div className={styles.weightDiv}>
-                                <label>Id: </label>
-                                {stats.id}
+                            <div className={styles.id}>
+                                <label><bold>Id: {stats.id}</bold> 
+                               </label>
                             </div>
                             <div className={styles.typesDiv}>
                             {stats.types.map((el, i) =>

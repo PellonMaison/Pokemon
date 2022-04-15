@@ -4,16 +4,17 @@
 .list{
     display: flex;
     justify-content: center;
+    background-color: #12181B;
     align-items: center;
-    height: 40px;
+    height: 30px;
 }
 
-
 .btn{
-    background-color: #fff2f2;
-    border-radius: 4px;
+    
+    background-color: #1EADEF;
+    border-radius: 25px;
     width: 3.5em;
-    height: 3em;
+    height: 2em;
     margin-right: 1em;
 }
 .btn:hover{
@@ -25,5 +26,5 @@
 }
 
 .hola{
-    background-color: #234643;
+    background-color:  #12181B;
 }

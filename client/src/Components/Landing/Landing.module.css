@@ -1,25 +1,34 @@
-.img{
-    background-image: url('../../Imgs/bg.png');
+
+body{
+    background-image: url('./LandingPage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center ;
+   
     width: 100;
-    height: 739px;  
+    height: 700px;  
     
 }
 
 .btn{
     margin-right: 50rem;
-    margin-top: 6rem ;
-    background-color: transparent;
-    border-color: transparent;
-    /* transition: 1s, 2s;
-    transform: scaleX(1) translate(100px); 
-     transform: scale(1.1,1.1); */
-     animation: bounce .5s alternate infinite linear;
-     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-
+    margin-top: 10rem ;
+    background-color: #FABD7D;
+    border-color: white;
+    width: 10rem;
+    height: 3rem;
+    font-size: 20px;
 }
+.head{
+    
+    margin-right: 810px;
+    margin-top: 200px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    color: #FABD7D;
+    font-weight: bold;
+}
+
 
 @keyframes bounce {
 

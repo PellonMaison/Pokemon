@@ -16,10 +16,10 @@ module.exports = (sequelize) => {
     }, 
     img: {
       type: DataTypes.STRING, 
-      get() {
-        return this.getDataValue('img') || "https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1"
-      }
+      allowNull: false,
+      
     },
+
     hp: {
       type: DataTypes.INTEGER,
       allowNull: true

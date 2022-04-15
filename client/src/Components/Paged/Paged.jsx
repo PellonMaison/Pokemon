@@ -4,9 +4,8 @@ import styles from './Paged.module.css'
 
 export default function Paged({ PokesPerPage, allPokemons, paged }) {
     const pageNumbers = [];
-    for (let i = 1; i < allPokemons/PokesPerPage + 1; i++) { // 40/9 = 5? je
-        pageNumbers.push(i);
-    }
+    for (let i = 1; i < allPokemons/PokesPerPage + 1; i++) { 
+    pageNumbers.push(i); }
 
     return (
         <div className={styles.hola}>

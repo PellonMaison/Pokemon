@@ -1,25 +1,19 @@
-.reloadBtn{
-    background-color: rgb(141, 162, 184);
-    border-color:rgb(96, 173, 255);
-    border-radius: 12%;
-    /* font-family: sans-serif; */
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    text-align:justify;
-}
+
 .nav{
-    background-color:  #89b9b4 ;
+    background-color: #2A2E35;
 }
 .home{
     font-weight: bold;
     font-family: fantasy;
-    color: green;
-    background-color: black;
+    color: #12181B;
+    background-color:transparent;
     text-align:justify;
 }
 
 .createLink{
-    background-color:#89b9b4;
-    color: black;
+    background-color:#12181B;
+    
+    
     
 }
 .create{
@@ -28,7 +22,7 @@
     text-transform: uppercase;
     font-weight: bold;
     color: black;
-    background-color:  #c6fffa ;
+    background-color:  #09C372 ;
     border-radius: 3px;
     margin-top: 10px;
     padding: 0em 1em;
@@ -39,37 +33,47 @@
 }
     
 .page{
-    background-color: #234643 ;
-    width: 100%;
-    /* height: 1400px; */
+    background-color: #12181B ;
+    height: 100vh;
+    width: 100vw;
     flex-grow: 999;
-    min-height: 100%;
-    padding-bottom: 250px;
+    
 }
 
 .select{
     background-color: white;
     margin-top: 10px;
-    color: grey
+    color: #12181B
 }
 
 .container{
     display: flex;
     justify-content: center;
+    background-color: #12181B;
 
 }
 .group{
+    
     flex-basis: 0;
     flex-grow: 999;
-    min-width: 60%;
+    min-width: 70%;
+    background-color: #12181B;
 }
 
 .o{
-    background-color: #234643;
+    background-color: #12181B;
     padding-bottom: auto;
     flex-grow: 1;
 }
 
 .col{
-    background-color: #234643;
+    background-color: #12181B;
+}
+
+.paginacion{
+    background-color: #12181B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1800px;
 }

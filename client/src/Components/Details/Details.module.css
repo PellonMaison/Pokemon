@@ -1,6 +1,6 @@
 
 .details{
-    background-color: #234643  ;
+    
     display: flex;
     justify-content: center;
     /* flex-wrap: wrap; */
@@ -11,13 +11,11 @@
     flex-basis: 100%;
 }
 .nam{
-    /* margin-left: -20rem; */
-    /* margin-right: 20px; */
-    /* background: rgb(71,71,71);
-    background: linear-gradient(90deg, rgba(71,71,71,1) 0%, rgba(113,112,112,1) 20%, rgba(240,240,240,1) 100%);   */
-    background-color: #89b9b4 ; 
     justify-content: center;
     backdrop-filter: blur(2px);
+    height: 100px;
+    width: 100px;
+
 
 }
 .name{
@@ -25,93 +23,104 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: uppercase;
     margin-top: 100px;
-    margin-left: 2em;
+    margin-left: 15em;
     border-radius: 5px;
     border:   #234643  solid 3px;
     background-color:  #3b605d  ; 
     height: 50px;
     width: 300px;
     display: center;
+    
 }
 
 .imgDiv{
-    /* background-color:  #e0e0e0; */
-    background-color: #c6fffa;
-    /* border: #89b9b4 solid 1px; */
-    border-top: black solid 2px;
-    border-left: black solid 2px;
+    background-color: #2A2E35;
+    border-top: rgb(219, 76, 76) solid 2px;
+    border-left: rgb(119, 68, 214) solid 2px;
     border-radius: 8px;
     opacity: 0.99;
-    margin-top: 200px;
-    height: 310px;
+    margin-top: 250px;
+    height: 350px;
+    margin-left: 200px; 
     box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
     -webkit-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
     -moz-box-shadow: 11px 10px 20px -1px rgba(0,0,0,0.79);
 }
 .img{
-    width: 300px;
-    height: 300px;
+    width: 470px;
+    height: 350px;
 }
 
 .stats{
     /* background-color: #CBCBCB;
     background: rgb(71,71,71);
     background: linear-gradient(90deg, rgba(71,71,71,1) 0%, rgba(113,112,112,1) 20%, rgba(240,240,240,1) 100%);  */
-    background-color: #89b9b4 ; 
-    margin-top: -1.5em;
-    height: 300px;
-    /* justify-content: center; */
-    align-self: center;
+    background-color:#2A2E35 ; 
+    margin-top: 250px;
+    height: 350px;
+    margin-right: 350px;
+    width: 300px;
+    border-radius: 8px;
 }
+  
 .stats > * {
-    height: 28px;
+    height: 18px;
     margin-right: 2em;
-    /* background-color: #a9a9a9;  */
-    /* background-color: rgb(251,220,166); */
-    
     background-color: #c6fffa;
     border: black solid 2px;
 }
 
 .hpDiv{
-    /* background-color: indigo; */
+    background-color: #68AE28;
     margin-left: 2rem;
     margin-top: 2rem;
+    font-weight: bold;
     
 }
 .attackDiv{
-    /* background-color: greenyellow; */
+    background-color: #68AE28;
     margin-left: 2rem;
     margin-top: .5rem;
+    font-weight: bold;
 }
 .defenseDiv{
-    /* background-color: red; */
+    background-color: red;
     margin-left: 2rem;
     margin-top: .5rem;
+    font-weight: bold;
 }
 .heightDiv{
-    /* background-color: blue; */
+    background-color: goldenrod;
     margin-left: 2rem;
     margin-top: .5rem;
+    font-weight: bold;
 }
 .weightDiv{
-    /* background-color: goldenrod; */
+    background-color: goldenrod;
     margin-left: 2rem;
     margin-top: .5rem;
+    font-weight: bold;
 }
 
 .typesDiv{
-    /* background-color: saddlebrown; */
+    background-color: saddlebrown;
     margin-left: 2rem;
     margin-top: .5rem;
     text-transform: capitalize;
-    height: 70px;
+    height: 60px;
     /* border-color: black solid 10px; */
 }
-
+.id{
+    background-color: goldenrod;
+    margin-left: 2rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    height: 50px;
+}
 .type{
     justify-self: center;
     display:flexbox;
     margin-bottom: -16px;
+    font-weight: bold;
 }
 
